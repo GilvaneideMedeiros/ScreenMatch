@@ -1,4 +1,7 @@
 package br.com.gilvaneidemedeiros.calculos;
 
-public class Classificavel {
+public interface Classificavel {
+    int getClassificacao();
+
 }
+

@@ -1,5 +1,6 @@
-import br.com.gilvaneidemedeiros.modelos.Filme;
-import br.com.gilvaneidemedeiros.modelos.Serie;
+package br.com.gilvaneidemedeiros.modelos;
+
+import br.com.gilvaneidemedeiros.calculos.FiltroRecomendacao;
 import br.com.gilvaneidemedeiros.calculos.CalculadoraDeTempo;
 
 public class Principal {
@@ -42,7 +43,7 @@ public class Principal {
         System.out.println("Quantidade de temporadas: " +minhaSerie.getTemporadas());
         System.out.println("Quantidade de episódios por temporada: " +minhaSerie.getEpisodiosPorTemporada());
         System.out.println("A série está ativa? ");
-            if (minhaSerie.isAtiva() == true) {
+            if (minhaSerie.isAtiva()) {
                 System.out.println("Sim");
                 } else {
                 System.out.println("Não");
@@ -76,6 +77,14 @@ public class Principal {
 
         System.out.println("Tempo total: " +calculadora.getTempoTotal());
 
-        System.out.println("\n");
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie("Lost");
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
+
 }
