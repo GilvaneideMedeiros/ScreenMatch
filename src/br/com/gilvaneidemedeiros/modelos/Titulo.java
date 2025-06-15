@@ -1,43 +1,51 @@
 package br.com.gilvaneidemedeiros.modelos;
 
-import com.google.gson.annotations.SerializedName;
-
-public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
+public class Titulo {
     private String nome;
-    @SerializedName("Year")
     private int anoLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public String getNome() { return nome; }
-
-    public int getAnoLancamento() { return anoLancamento; }
-
-    public boolean isIncluidoNoPlano() { return incluidoNoPlano; }
-
-    public int getDuracaoEmMinutos() { return duracaoEmMinutos; }
-
-    public double getSomaDasAvaliacoes() {
-        return somaDasAvaliacoes;
-    }
-
-    public int getTotalDeAvaliacoes() {
-        return totalDeAvaliacoes;
+    public String getNome() {
+        return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    public int getAnoLancamento() {
+        return anoLancamento;
+    }
+
     public void setAnoLancamento(int anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 
-    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
-        this.incluidoNoPlano = incluidoNoPlano;
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
+    public double getSomaDasAvaliacoes() {
+        return somaDasAvaliacoes;
+    }
+
+    public void setSomaDasAvaliacoes(double somaDasAvaliacoes) {
+        this.somaDasAvaliacoes = somaDasAvaliacoes;
+    }
+
+    public int getTotalDeAvaliacoes() {
+        return totalDeAvaliacoes;
+    }
+
+    public void setTotalDeAvaliacoes(int totalDeAvaliacoes) {
+        this.totalDeAvaliacoes = totalDeAvaliacoes;
+    }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
     }
 
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
@@ -54,7 +62,6 @@ public class Titulo implements Comparable<Titulo> {
         } else {
             System.out.println("Não incluido no plano");
         }
-
     }
 
     public void avalia(double nota) {
@@ -62,10 +69,11 @@ public class Titulo implements Comparable<Titulo> {
         totalDeAvaliacoes++;
     }
 
-    public double pegaMedia() { return somaDasAvaliacoes / totalDeAvaliacoes;
-    }
-
-    public int compareTo(Titulo outroTitulo) {
-        return this.getNome().compareTo(outroTitulo.getNome());
+    public double pegaMedia() {
+        if (totalDeAvaliacoes == 0) {
+            return 0;
+        } else {
+            return somaDasAvaliacoes / totalDeAvaliacoes;
+        }
     }
 }

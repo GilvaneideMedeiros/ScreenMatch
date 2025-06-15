@@ -1,7 +1,10 @@
-package br.com.gilvaneidemedeiros.modelos;
+package br.com.gilvaneidemedeiros;
 
 import br.com.gilvaneidemedeiros.calculos.FiltroRecomendacao;
 import br.com.gilvaneidemedeiros.calculos.CalculadoraDeTempo;
+import br.com.gilvaneidemedeiros.modelos.Episodio;
+import br.com.gilvaneidemedeiros.modelos.Filme;
+import br.com.gilvaneidemedeiros.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -10,8 +13,8 @@ public class Principal {
         meuFilme.setNome("Matrix");
         meuFilme.setAnoLancamento(1999);
         meuFilme.setDuracaoEmMinutos(136);
-        meuFilme.setIncluidoNoPlano(true);
-        meuFilme.setDiretor("Lana Wachowski e Lilly Wachowski");
+        meuFilme.setDiretor("Lana Wachowski");
+        System.out.println("Duração do filme em minutos: " + meuFilme.getDuracaoEmMinutos());
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(9);
@@ -26,14 +29,13 @@ public class Principal {
 
         Serie minhaSerie = new Serie();
         minhaSerie.setNome("Lost");
-        minhaSerie.setAnoLancamento(2004);
-        minhaSerie.setIncluidoNoPlano(false);
+        minhaSerie.setAnoLancamento(2000);
+        minhaSerie.exibeFichaTecnica();
         minhaSerie.setTemporadas(15);
         minhaSerie.setEpisodiosPorTemporada(10);
         minhaSerie.setAtiva(true);
         minhaSerie.setMinutosPorEpisodio(60);
 
-        minhaSerie.exibeFichaTecnica();
         minhaSerie.avalia(9);
         minhaSerie.avalia(7);
         minhaSerie.avalia(10);
@@ -56,7 +58,6 @@ public class Principal {
         outroFilme.setNome("A Paixão de Cristo");
         outroFilme.setAnoLancamento(2004);
         outroFilme.setDuracaoEmMinutos(127);
-        outroFilme.setIncluidoNoPlano(true);
         outroFilme.setDiretor("Mel Gibson");
 
         outroFilme.exibeFichaTecnica();
@@ -74,7 +75,6 @@ public class Principal {
         calculadora.inclui(meuFilme);
         calculadora.inclui(minhaSerie);
         calculadora.inclui(outroFilme);
-
         System.out.println("Tempo total: " +calculadora.getTempoTotal());
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();

@@ -8,6 +8,7 @@ public class Serie extends Titulo {
     private int totalVisualizacoes;
 
     public Serie() {
+        super();
         this.totalVisualizacoes = totalVisualizacoes;
     }
 
