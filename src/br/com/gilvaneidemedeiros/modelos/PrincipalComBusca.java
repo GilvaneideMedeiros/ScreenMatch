@@ -19,7 +19,7 @@ public class PrincipalComBusca {
         var busca = leitura.nextLine();
 
         String buscaCodificada = URLEncoder.encode(busca, StandardCharsets.UTF_8);
-        String endereco = "http://www.omdbapi.com/?t=" + busca + "&apikey=9de8e5d7";
+        String endereco = "http://www.omdbapi.com/?t=" + buscaCodificada + "&apikey=9de8e5d7";
 
         HttpClient cliente = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -29,19 +29,17 @@ public class PrincipalComBusca {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = resposta.body();
-        System.out.println(json);
+        System.out.println("JSON recebido" + json);
 
         Gson gson = new Gson();
         Titulo meuTituloOmdb = gson.fromJson(json, Titulo.class);
-        System.out.println(meuTituloOmdb);
+        System.out.println("Meu título: " + meuTituloOmdb);
 
-            Titulo tituloConvertido = new Titulo();
-            System.out.println("Título já convertido");
-            System.out.println(tituloConvertido);
-            System.out.println("\n");
-            System.out.println("Nome: " + tituloConvertido.getNome());
-            System.out.println("Ano de lançamento: " + tituloConvertido.getAnoLancamento());
-            System.out.println("Duração em minutos: " + tituloConvertido.getDuracaoEmMinutos());
+            System.out.println("\n--- Detalhes do filme ---");
+            System.out.println("Título completo (toString): " + meuTituloOmdb);
+            System.out.println("Nome: " + meuTituloOmdb.getNome());
+            System.out.println("Ano de lançamento: " + meuTituloOmdb.getAnoLancamento());
+            System.out.println("Duração em minutos: " + meuTituloOmdb.getDuracaoEmMinutos());
 
         } catch (NumberFormatException e) {
             System.out.println("Aconteceu um erro de formatação de número ao converter os dados do filme.: ");
@@ -63,7 +61,4 @@ public class PrincipalComBusca {
         System.out.println("\nO programa finalizou corretamente!");
 
     }
-
-
-
 }

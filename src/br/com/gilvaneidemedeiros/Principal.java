@@ -22,7 +22,7 @@ public class Principal {
         meuFilme.avalia(10);
         System.out.println("Soma das avaliações: " +meuFilme.getSomaDasAvaliacoes());
         System.out.println("Total das avaliações: " +meuFilme.getTotalDeAvaliacoes());
-        System.out.println("Média de avaliações: " +meuFilme.pegaMedia());
+        System.out.println("Média das avaliações: " + meuFilme.pegaMedia());
         System.out.println("Diretor: " +meuFilme.getDiretor());
         System.out.println("Duração em minutos: " +meuFilme.getDuracaoEmMinutos());
         System.out.println("\n");
