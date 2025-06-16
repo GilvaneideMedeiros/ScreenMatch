@@ -57,7 +57,7 @@ public class Titulo {
         System.out.println("Ano de lançamento: " + anoLancamento);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
 
-        if (incluidoNoPlano == true) {
+        if (incluidoNoPlano) {
             System.out.println("Incluído no plano: sim");
         } else {
             System.out.println("Não incluido no plano");
