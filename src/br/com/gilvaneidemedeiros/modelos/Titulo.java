@@ -1,12 +1,36 @@
 package br.com.gilvaneidemedeiros.modelos;
 
-public class Titulo {
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
+    @SerializedName("Runtime")
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoLancamento) {
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4) {
+            this.anoLancamento = Integer.parseInt(meuTituloOmdb.year().substring(0, 4));
+        } else {
+            this.anoLancamento = Integer.parseInt(meuTituloOmdb.year());
+        }
+    }
+
+    public Titulo() {
+        this(null, 0);
+    }
 
     public String getNome() {
         return nome;
@@ -75,5 +99,10 @@ public class Titulo {
         } else {
             return somaDasAvaliacoes / totalDeAvaliacoes;
         }
+    }
+
+    @Override
+    public int compareTo(Titulo o) {
+        return 0;
     }
 }

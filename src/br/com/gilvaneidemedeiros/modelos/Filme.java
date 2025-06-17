@@ -18,8 +18,8 @@ public class Filme extends Titulo implements Classificavel {
         return 0;
     }
 
-   /* @Override
+   @Override
     public String toString() {
         return "Filme: " + getNome() + " (" + getAnoLancamento() + ")";
-    }*/
+    }
 }
