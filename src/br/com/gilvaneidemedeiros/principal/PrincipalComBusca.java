@@ -12,6 +12,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 import java.util.jar.JarException;
+import java.lang.NumberFormatException;
 
 public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {

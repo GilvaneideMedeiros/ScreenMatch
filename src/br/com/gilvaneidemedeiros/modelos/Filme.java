@@ -5,8 +5,8 @@ import br.com.gilvaneidemedeiros.calculos.Classificavel;
 public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
-    public Filme() {
-        super();
+    public Filme(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
     }
 
     public String getDiretor() { return diretor; }
@@ -15,7 +15,7 @@ public class Filme extends Titulo implements Classificavel {
 
     @Override
     public int getClassificacao() {
-        return 0;
+        return (int)pegaMedia() / 3;
     }
 
    @Override
