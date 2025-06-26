@@ -7,6 +7,8 @@ import br.com.gilvaneidemedeiros.modelos.Episodio;
 import br.com.gilvaneidemedeiros.modelos.Filme;
 import br.com.gilvaneidemedeiros.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         var meuFilme = new Filme();
@@ -116,6 +118,14 @@ public class Principal {
         System.out.println("Classificação do filme do Paulo: " +filmeDoPaulo.getClassificacao());
         System.out.println("Classificação do episódio: " +episodio.getClassificacao());
         System.out.println("\n");
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(filmeDoPaulo);
+        System.out.println("Tamanho da lista de filmes: " +listaDeFilmes.size());
+        System.out.println("Primeiro filme da lista: " +listaDeFilmes.get(0).getNome());
+        System.out.println("Lista de filmes: " +listaDeFilmes);
     }
 
 }
