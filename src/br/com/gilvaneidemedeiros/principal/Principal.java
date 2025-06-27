@@ -126,6 +126,7 @@ public class Principal {
         System.out.println("Tamanho da lista de filmes: " +listaDeFilmes.size());
         System.out.println("Primeiro filme da lista: " +listaDeFilmes.get(0).getNome());
         System.out.println("Lista de filmes: " +listaDeFilmes);
+        System.out.println("toString do filme: " +listaDeFilmes.get(0).toString());
         System.out.println("\n");
 
         ArrayList<Serie> listaSeries = new ArrayList<>();
@@ -133,6 +134,7 @@ public class Principal {
         System.out.println("Tamanho da lista de séries: " +listaSeries.size());
         System.out.println("Primeira série da lista: " +listaSeries.get(0).getNome());
         System.out.println("Lista de séries: " +listaSeries);
+        System.out.println("toString da série: " +listaSeries.get(0).toString());
         System.out.println("\n");
     }
 
