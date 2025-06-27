@@ -1,4 +1,6 @@
-<h1 align="center"> Projeto desenvolvido durante a Formação Java e Orientação a Objetos G8 - ONE - Alura </h1>
+<h1 align="center"> ScreenMatch </h1>
+
+Projeto desenvolvido durante a Formação Java e Orientação a Objetos G8 - ONE - Alura.
 
 Este projeto mostra um católogo de filmes e séries, com fichas técnicas de cada um e tempo de duração total do catálogo.
 
