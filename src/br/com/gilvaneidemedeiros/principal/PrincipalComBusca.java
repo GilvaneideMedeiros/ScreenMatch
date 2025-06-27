@@ -1,5 +1,6 @@
-package br.com.gilvaneidemedeiros.modelos;
+package br.com.gilvaneidemedeiros.principal;
 
+import br.com.gilvaneidemedeiros.modelos.Titulo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
@@ -36,7 +37,7 @@ public class PrincipalComBusca {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
             String json = resposta.body();
-            System.out.println("JSON recebido" + json);
+            System.out.println("\nJSON recebido" + json);
 
             Gson gson = new Gson();
             Titulo meuTituloOmdb = gson.fromJson(json, Titulo.class);
