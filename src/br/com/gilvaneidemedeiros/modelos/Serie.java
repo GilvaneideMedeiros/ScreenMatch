@@ -36,6 +36,11 @@ public class Serie extends Titulo {
     public int getClassificacao() {
         return (int)pegaMedia() / 3;
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + getNome() + " (" + getAnoLancamento() + ")";
+    }
 }
 
 
