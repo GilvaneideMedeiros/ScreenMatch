@@ -11,10 +11,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        var meuFilme = new Filme();
+        var meuFilme = new Filme("Matrix", 1999);
         System.out.println("\n");
-        meuFilme.setNome("Matrix");
-        meuFilme.setAnoLancamento(1999);
         meuFilme.setDuracaoEmMinutos(136);
         meuFilme.setDiretor("Lana Wachowski");
         System.out.println("Duração do filme em minutos: " + meuFilme.getDuracaoEmMinutos());
@@ -30,9 +28,7 @@ public class Principal {
         System.out.println("Duração em minutos: " +meuFilme.getDuracaoEmMinutos());
         System.out.println("\n");
 
-        var minhaSerie = new Serie();
-        minhaSerie.setNome("Lost");
-        minhaSerie.setAnoLancamento(2000);
+        var minhaSerie = new Serie("Lost", 2000);
         minhaSerie.exibeFichaTecnica();
         minhaSerie.setTemporadas(15);
         minhaSerie.setEpisodiosPorTemporada(10);
@@ -57,10 +53,8 @@ public class Principal {
         System.out.println("Quantidade de minutos por episódio: " +minhaSerie.getMinutosPorEpisodio());
         System.out.println("Duração para maratonar Lost: " +minhaSerie.getDuracaoEmMinutos());
 
-        var outroFilme = new Filme();
+        var outroFilme = new Filme("A Paixão de Cristo", 2004);
         System.out.println("\n");
-        outroFilme.setNome("A Paixão de Cristo");
-        outroFilme.setAnoLancamento(2004);
         outroFilme.setDuracaoEmMinutos(127);
         outroFilme.setDiretor("Mel Gibson");
 
@@ -74,9 +68,7 @@ public class Principal {
         System.out.println("Diretor: " +outroFilme.getDiretor());
         System.out.println("Duração em minutos: " +outroFilme.getDuracaoEmMinutos());
 
-        var filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("Top Gun: Maverick");
-        filmeDoPaulo.setAnoLancamento(2022);
+        var filmeDoPaulo = new Filme("Top Gun: Maverick", 2022);
         filmeDoPaulo.setDuracaoEmMinutos(130);
         filmeDoPaulo.setDiretor("Joseph Kosinski");
 

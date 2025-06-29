@@ -7,9 +7,8 @@ public class Serie extends Titulo {
     private int minutosPorEpisodio;
     private int totalVisualizacoes;
 
-    public Serie() {
-        super();
-        this.totalVisualizacoes = totalVisualizacoes;
+    public Serie(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
     }
 
     public int getTemporadas() { return temporadas; }
