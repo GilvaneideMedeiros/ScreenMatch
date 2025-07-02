@@ -12,7 +12,7 @@ public class Episodio implements Classificavel {
         return totalVisualizacoes;
     }
 
-    public void setVisualizacoes(int totalVisualizacoes) {
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
 
     }
 
@@ -38,7 +38,4 @@ public class Episodio implements Classificavel {
 
     }
 
-    public void setTotalVisualizacoes(int totalVisualizacoes) {
-
-    }
 }
