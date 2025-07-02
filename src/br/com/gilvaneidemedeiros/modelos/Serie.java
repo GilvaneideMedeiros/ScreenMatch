@@ -11,6 +11,10 @@ public class Serie extends Titulo {
         super(nome, anoLancamento);
     }
 
+    public int getTotalVisualizacoes() { return totalVisualizacoes; }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) { this.totalVisualizacoes = totalVisualizacoes; }
+
     public int getTemporadas() { return temporadas; }
 
     public int getEpisodiosPorTemporada() { return episodiosPorTemporada; }
